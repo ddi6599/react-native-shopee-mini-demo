@@ -13,8 +13,8 @@ npm install -g expo-cli
 expo start
 ```
 
-![react-img1](https://github.com/ddi6599/react-native-shopee-mini-demo/blob/master/assets/app/start.png){width="350"}  ![react-img4](https://github.com/ddi6599/react-native-shopee-mini-demo/blob/master/assets/app/signin.png){width="350"}
+![react-img1](https://github.com/ddi6599/react-native-shopee-mini-demo/blob/master/assets/app/start.png =350x)  ![react-img4](https://github.com/ddi6599/react-native-shopee-mini-demo/blob/master/assets/app/signin.png =350x)
 
-![react-img2](https://github.com/ddi6599/react-native-shopee-mini-demo/blob/master/assets/app/index.png){width="350"}  ![react-img5](https://github.com/ddi6599/react-native-shopee-mini-demo/blob/master/assets/app/pull_refresh.png){width="350"}
+![react-img2](https://github.com/ddi6599/react-native-shopee-mini-demo/blob/master/assets/app/index.png =350x)  ![react-img5](https://github.com/ddi6599/react-native-shopee-mini-demo/blob/master/assets/app/pull_refresh.png =350x)
 
-![react-img3](https://github.com/ddi6599/react-native-shopee-mini-demo/blob/master/assets/app/detail.png){width="350"}  ![react-img6](https://github.com/ddi6599/react-native-shopee-mini-demo/blob/master/assets/app/find.png){width="350"}
+![react-img3](https://github.com/ddi6599/react-native-shopee-mini-demo/blob/master/assets/app/detail.png =350x)  ![react-img6](https://github.com/ddi6599/react-native-shopee-mini-demo/blob/master/assets/app/find.png =350x)
