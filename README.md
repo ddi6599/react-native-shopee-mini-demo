@@ -11,6 +11,7 @@ npm install -g expo-cli
 
 # serve with hot reload
 expo start
+```
 
 ![react-img1](https://github.com/ddi6599/react-native-shopee-mini-demo/blob/master/assets/app/start.png)  ![react-img4](https://github.com/ddi6599/react-native-shopee-mini-demo/blob/master/assets/app/signin.png)
 
