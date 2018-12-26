@@ -62,7 +62,7 @@ export default class MineScreen extends Component {
             <Text>消息订阅</Text>
             </Body>
             <Right>
-              <Switch value={false} onTintColor="#50B948" />
+              <Switch value={false} trackColor="#50B948" />
             </Right>
           </ListItem>
           <ListItem icon>
