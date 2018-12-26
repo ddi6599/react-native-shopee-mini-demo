@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { AppRegistry, View } from 'react-native';
-import { Container, Button, Segment, Content, Text } from 'native-base';
+import { AppRegistry, View, Image, ScrollView, RefreshControl } from 'react-native';
+import { Container, Button, Segment, Text, Card, CardItem, Thumbnail, Icon, Left, Body, Right } from 'native-base';
 import HeaderScreen from '../components/header'
 
 export default class NearByScreen extends Component {
@@ -12,7 +12,46 @@ export default class NearByScreen extends Component {
         {key: 1, name: '销量'},
         {key: 2, name: '人气'}
       ],
-      activeId: 0
+      activeId: 0,
+      refreshing: false,
+      list: [
+        {
+          name: 'NativeBase',
+          gree: 'GeekyAnts',
+          like: 230,
+          comment: 23,
+          head: require("../../assets/img/icon/default_head.jpg"),
+          url: require("../../assets/img/banner/1.jpg"),
+          time: '11h ago'
+        },
+        {
+          name: 'NativeBase',
+          gree: 'GeekyAnts',
+          like: 230,
+          comment: 23,
+          head: require("../../assets/img/icon/default_head.jpg"),
+          url: require("../../assets/img/banner/2.jpg"),
+          time: '11h ago'
+        },
+        {
+          name: 'NativeBase',
+          gree: 'GeekyAnts',
+          like: 230,
+          comment: 23,
+          head: require("../../assets/img/icon/default_head.jpg"),
+          url: require("../../assets/img/banner/3.jpg"),
+          time: '11h ago'
+        },
+        {
+          name: 'NativeBase',
+          gree: 'GeekyAnts',
+          like: 230,
+          comment: 23,
+          head: require("../../assets/img/icon/default_head.jpg"),
+          url: require("../../assets/img/banner/1.jpg"),
+          time: '11h ago'
+        }
+      ]
     };
   }
 
@@ -22,8 +61,15 @@ export default class NearByScreen extends Component {
     })
   }
 
+  _onRefresh = () => {
+    this.setState({refreshing: true});
+    setTimeout(() => {
+      this.setState({refreshing: false});
+    }, 1000);
+  }
+
   render() {
-    let { tabs, activeId } = this.state
+    let { tabs, activeId, list } = this.state
     return (
       <Container>
         <HeaderScreen options={{
@@ -46,10 +92,52 @@ export default class NearByScreen extends Component {
             })
           }
         </Segment>
-        <Content padder>
+        <ScrollView refreshControl={
+          <RefreshControl
+            refreshing={this.state.refreshing}
+            onRefresh={this._onRefresh}
+          />
+        }
+        showsVerticalScrollIndicator={false}>
           {
             activeId === 0 && <View>
-              <Text>综合</Text>
+              {
+                list.map((item, index) => {
+                  return (
+                    <Card key={index}>
+                      <CardItem>
+                        <Left>
+                          <Thumbnail source={item.head} />
+                          <Body>
+                          <Text>{item.name}</Text>
+                          <Text note>{item.gree}</Text>
+                          </Body>
+                        </Left>
+                      </CardItem>
+                      <CardItem cardBody>
+                        <Image source={item.url} style={{height: 150, width: null, flex: 1}}/>
+                      </CardItem>
+                      <CardItem>
+                        <Left>
+                          <Button transparent>
+                            <Icon active name="thumbs-up" />
+                            <Text>{item.like}</Text>
+                          </Button>
+                        </Left>
+                        <Body>
+                        <Button transparent>
+                          <Icon active name="chatbubbles" />
+                          <Text>{item.comment}</Text>
+                        </Button>
+                        </Body>
+                        <Right>
+                          <Text>{item.time}</Text>
+                        </Right>
+                      </CardItem>
+                    </Card>
+                  )
+                })
+              }
             </View>
           }
           {
@@ -62,7 +150,7 @@ export default class NearByScreen extends Component {
               <Text>人气</Text>
             </View>
           }
-        </Content>
+        </ScrollView>
       </Container>
     );
   }
