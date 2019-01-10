@@ -27,7 +27,6 @@ export const AppStack = createStackNavigator({
     header: null,
     headerStyle: {
       elevation: 0, // 去阴影
-    },
-    gesturesEnabled: false
+    }
   }
 })

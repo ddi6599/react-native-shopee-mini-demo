@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { AppRegistry, View, Image, ScrollView, RefreshControl } from 'react-native';
 import { Container, Button, Segment, Text, Card, CardItem, Thumbnail, Icon, Left, Body, Right } from 'native-base';
-import HeaderScreen from '../components/header'
+import Header from '../components/Header'
 
 export default class NearByScreen extends Component {
   constructor(props) {
@@ -72,12 +72,12 @@ export default class NearByScreen extends Component {
     let { tabs, activeId, list } = this.state
     return (
       <Container>
-        <HeaderScreen options={{
-          hideLeft: true,
-          title: 'SHOPEE',
-          bg: {backgroundColor: '#f40'},
-          color: {color: 'white'}
-        }} />
+        <Header
+          hideLeft={true}
+          title={'发现'}
+          bg={{backgroundColor: '#f40'}}
+          color={{color: 'white'}}
+        />
         <Segment style={{backgroundColor: '#f40'}}>
           {
             tabs.map((item, idx) => {
@@ -155,4 +155,3 @@ export default class NearByScreen extends Component {
     );
   }
 }
-AppRegistry.registerComponent('NearByScreen', () => NearByScreen)

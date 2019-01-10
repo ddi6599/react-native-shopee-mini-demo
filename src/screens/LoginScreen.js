@@ -115,7 +115,4 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     marginBottom: 30
   },
-});
-
-// skip this line if using Create React Native App
-AppRegistry.registerComponent('LoginScreen', () => LoginScreen);
+})

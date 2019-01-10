@@ -10,11 +10,12 @@ import {
   RefreshControl, BackHandler, Platform, ToastAndroid
 } from 'react-native';
 import Swiper from 'react-native-swiper'
-import HeaderScreen from '../components/header'
+import Header from '../components/Header'
 const { width } = Dimensions.get('window')
 const data = new Array(16).fill('活动');
 
 export default class HomeScreen extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -55,12 +56,11 @@ export default class HomeScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <HeaderScreen options={{
-          hideLeft: true,
-          title: 'SHOPEE',
-          bg: {backgroundColor: '#9DD6EB'},
-          color: {color: 'white'}
-        }} />
+        <Header
+          hideLeft={true}
+          bg={{backgroundColor: '#9DD6EB'}}
+          color={{color: 'white'}}
+        />
         <View style={{height: 200}}>
           <Swiper style={styles.wrapper} height={200} autoplay>
             <View style={styles.slide1}>
@@ -194,6 +194,3 @@ const styles = StyleSheet.create({
     color: '#fff'
   },
 });
-
-// skip this line if using Create React Native App
-AppRegistry.registerComponent('HomeScreen', () => HomeScreen);

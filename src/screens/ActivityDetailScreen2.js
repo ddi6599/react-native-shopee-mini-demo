@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { AppRegistry, Text, StyleSheet, View } from 'react-native';
-import HeaderScreen from '../components/header'
+import Header from '../components/Header'
 
 export default class ActivityDetailScreen2 extends Component {
   constructor(props) {
@@ -14,11 +14,10 @@ export default class ActivityDetailScreen2 extends Component {
   render() {
     return (
       <View>
-        <HeaderScreen
-          options={{
-          title: this.props.navigation.state.params.Id,
-          }}
-          navigation={this.props.navigation} />
+        <Header
+          title={this.props.navigation.state.params.Id}
+          navigation={this.props.navigation}
+        />
         <View>
           <Text style={styles.baseText}>
             <Text style={styles.titleText}>
@@ -41,6 +40,3 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 });
-
-// skip this line if using Create React Native App
-AppRegistry.registerComponent('ActivityDetailScreen2', () => ActivityDetailScreen2);

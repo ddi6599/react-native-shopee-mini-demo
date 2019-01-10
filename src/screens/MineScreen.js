@@ -14,7 +14,7 @@ import {
   Radio,
   Separator
 } from "native-base";
-import HeaderScreen from '../components/header'
+import Header from '../components/Header'
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#FFF"
@@ -44,12 +44,12 @@ export default class MineScreen extends Component {
   render() {
     return (
       <View style={{ flex: 1}}>
-        <HeaderScreen options={{
-          hideLeft: true,
-          title: '个人中心',
-          bg: {backgroundColor: '#f40'},
-          color: {color: 'white'}
-        }} />
+        <Header
+          hideLeft={true}
+          title={'个人中心'}
+          bg={{backgroundColor: '#f40'}}
+          color={{color: 'white'}}
+        />
         <ScrollView>
           <Separator bordered noTopBorder />
           <ListItem icon>
@@ -180,6 +180,3 @@ export default class MineScreen extends Component {
     );
   }
 }
-
-// skip this line if using Create React Native App
-AppRegistry.registerComponent('MineScreen', () => MineScreen);
