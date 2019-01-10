@@ -7,7 +7,7 @@ import {
   Dimensions,
   ScrollView,
   TouchableOpacity,
-  RefreshControl, BackHandler, Platform
+  RefreshControl, BackHandler, Platform, ToastAndroid
 } from 'react-native';
 import Swiper from 'react-native-swiper'
 import HeaderScreen from '../components/header'
@@ -34,7 +34,15 @@ export default class HomeScreen extends Component {
   }
 
   onBackAndroid = () => {
-    return true;
+    if (this.props.navigation.isFocused()) {
+      if (this.lastBackPressed && this.lastBackPressed + 2000 >= Date.now()) {
+        //最近2秒内按过back键，可以退出应用。
+        return false;
+      }
+      this.lastBackPressed = Date.now();
+      ToastAndroid.show('再按一次退出应用', ToastAndroid.SHORT);
+      return true;
+    }
   }
 
   _onRefresh = () => {
